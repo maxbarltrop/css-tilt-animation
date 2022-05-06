@@ -1,0 +1,58 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.app-container {
+  background-image: linear-gradient(45deg, blue, rgb(161, 1, 1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  min-width: 600px;
+}
+
+.card-container {
+  perspective: 80vw;
+}
+
+.card {
+  min-width: 400px;
+  min-height: 400px;
+  width: 50vmin;
+  position: relative;
+  height: 50vmin;
+  overflow: hidden;
+  --tiltX: 0;
+  --tiltY: 0;
+  box-shadow: calc(var(--tiltX) * 0.1) calc(var(--tiltY) * 0.1 - 5px) 40px
+    rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 60px;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: -50vmin;
+  right: -50vmin;
+  bottom: -50vmin;
+  left: -50vmin;
+  transform: translateX(var(--tiltX)) translateY(var(--tiltY));
+}
+
+.React-logo {
+  pointer-events: none;
+  animation: spin infinite 20s linear;
+  height: 100%;
+  width: auto;
+  color: black;
+}
