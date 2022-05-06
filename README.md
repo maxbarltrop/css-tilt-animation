@@ -1,3 +1,3 @@
-# CSS Practice
+# CSS Practice (CSS, React)
 
-Cool CSS-driven mouse-tilt animation on a card component using trnaslation and rotation along with shadowing
+CSS-driven mouse-tilt animation on a card component using translation, rotation, and shadowing
